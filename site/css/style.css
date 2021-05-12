@@ -1,0 +1,439 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+html,body{
+	width:100%;
+	font-family: "微软雅黑";
+}
+
+ul{
+	list-style:none;
+}
+
+a{
+	text-decoration: none;
+}
+
+input{
+	border:none;
+	outline:none;
+}
+
+.clear{
+	clear:both;
+}
+
+.wrapperBox{
+	width:100%;
+}
+
+/*导航条*/
+
+.navBox{
+	width:100%;
+	height:40px;
+	background:#00848A;
+}
+
+.navBar{
+	width:1400px;
+	min-width:1400px;
+	margin:0 auto;
+}
+
+.navBar .logo{
+	width:34px;
+	height:31px;
+	float:left;
+}
+
+.logo img{
+	margin-top:5px;
+}
+
+.navBar nav{
+	float:right;
+}
+
+.navBar nav ul li{
+	float:left;
+	position:relative;
+}
+
+.navBar nav li a{
+	display:inline-block;
+	height:40px;
+	line-height:40px;
+    padding:0 10px;
+    color:#fff;
+}
+
+/*.navBar nav li a:hover{
+	color:#008484;
+	background:#fff;
+}*/
+.navBox nav ul li:hover a{
+    /*设置相对定位是为了设置a的显示层级，否则会被hover时的背景色遮住*/
+    position:relative;
+    z-index:2;
+    color: #00848A;
+}
+/*设置显示的背景色的样式和动画*/
+.navBox nav ul li .btnbg-x {
+    position: absolute;
+    left: -1px;
+    width: 0;
+    top: -1px;
+    bottom: -1px;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+/*设置当鼠标滑过或者是悬停在导航项上时的hover样式效果*/
+.navBox nav ul li:hover .btnbg-x {
+    width: 100%;
+    width: calc(100% + 2px);
+    background: #fff;
+    color: #00848A;
+}
+/*banner条*/
+
+.bannerBox{
+	width:100%;
+	height:640px;
+	overflow:hidden;
+	position:relative;
+}
+
+.bannerBox li .img{
+	width:100%;
+	height:100%;
+	display:none;
+}
+
+.bannerBox li .current{
+	display:block;
+}
+
+.bannerBox .dots{
+	position:absolute;
+	width:100px;
+    bottom:60px;
+    left:50%;
+    margin-left:-50px;
+}
+
+.bannerBox .dots>span{
+	display:inline-block;
+	width:11px;
+	height:11px;
+	background:#fff;
+	border-radius:15px;
+	cursor:pointer;
+	box-sizing:border-box;
+}
+
+.bannerBox .dots>span:not(:last-child){
+    margin-right:5px;
+}
+
+.bannerBox .dots>span.square{
+	background:#00848A;
+}
+
+/* 搜索框 */
+.searchBox{
+	width:975px;
+	height:68px;
+	margin:0 auto;
+	background:#fff;
+	position:relative;
+	margin-top:-30px;
+	border-radius:5px;
+	box-shadow:0 0 2px 0 #ccc;
+}
+
+.searchBox form input{
+	width:907px;
+	height:68px;
+	float:left;
+	text-indent:20px;
+	border-radius:5px;
+}
+
+.searchBox form input[type="submit"]{
+	display:inline-block;
+	width:68px;
+	height:68px;
+	background:url(../img/icon/searchicon.png) no-repeat center;
+	animation:bounce 0.75s infinite alternate;
+}
+
+/*bounce*跳动动画*/
+@keyframes bounce{
+	0%{
+		transform:translate3d(0,0,0);
+	}
+
+	100%{
+		transform:translate3d(0,-8px,0);
+	}
+}
+
+
+/*特惠房源*/
+
+.oddsBox{
+	width:1400px;
+	margin:30px auto 60px auto;
+}
+
+/*标题*/
+.oddsBox .title p,.wantgoBox .title p,.ensureBox .title p{
+	width:200px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#00848A;
+	color:#fff;
+	font-size:22px;
+	float:left;
+}
+
+.oddsBox .title span,.wantgoBox .title span,.ensureBox .title span{
+	font-size:22px;
+	display:inline-block;
+	float:left;
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+	color:#00848A;
+}
+
+.oddsBox .title span i{
+	display:inline-block;
+	font-style:normal;
+	padding:0 5px;
+	animation:bounce 0.35s infinite alternate;
+}
+
+.content{
+	clear:left;
+	height:800px;
+	padding-top:40px;
+	box-sizing:border-box;
+}
+
+.content .list .list_nav{
+	display:inline-block;
+	width:100px;
+	height:46px;
+	line-height:46px;
+	text-align:center;
+	background:#fff;
+	box-shadow: 0 0 4px 0 #ccc;
+	border-radius:5px;
+	box-sizing:border-box;
+	margin-right:80px;
+	cursor:pointer;
+}
+
+.content .list .list_nav:last-child{
+	margin-right:0;
+}
+
+.content .list .current_option{
+	background:#00848A;
+	color:#fff;
+}
+
+/*城市对应的房源信息*/
+.productBox{
+	width:100%;
+	margin:20px 0;
+	clear:both;
+	display:none;
+}
+
+.on{
+	display:block;
+}
+
+.infoBox{
+	width:340px;
+	height:350px;
+	float:left;
+	margin:20px 13px 0 0;
+}
+
+.infoBox:nth-child(4){
+	margin-right:0;
+}
+
+.infoBox p:first-child{
+	width:334px;
+	height:222px;
+	border:1px solid #fff;
+	overflow:hidden;
+	border-radius:10px;
+}
+
+.infoBox p:first-child img{
+	width:100%;
+	height:100%;
+	cursor:pointer;
+    transition:all 0.6s;
+    -ms-transition:all 0.6s;
+}
+
+.infoBox p:first-child img:hover{
+	transform:scale(1.2);
+	-ms-transform:scale(1.2);
+}
+
+.title{
+	font-size:16px;
+	margin:10px 0;
+}
+
+.infoBox span{
+	font-size:12px;
+}
+
+.infoBox p s{
+	margin:0 5px;
+}
+
+.infoBox ul{
+	margin:10px 0;
+}
+
+.infoBox ul li{
+	float:left;
+	font-size:12px;
+}
+
+.infoBox ul li img{
+	margin-right:15px;
+}
+
+/*你可能也想去*/
+.wantgoBox{
+	width:1400px;
+	height:303px;
+	margin:0 auto;
+}
+
+.wantgoBox ul{
+	clear:both;
+	padding-top:20px;
+}
+
+.wantgoBox ul li{
+	width:193px;
+	height:241px;
+	float:left;
+	margin-right:48px;
+	position:relative;
+}
+
+.wantgoBox ul li:last-child{
+	margin-right:0;
+}
+
+.wantgoBox ul li img{
+	width:193px;
+	height:241px;
+}
+
+.wantgoBox ul li p{
+	position:absolute;
+	top:144px;
+	left:50%;
+	margin-left:-59px;
+	z-index:10;
+}
+
+.wantgoBox ul li span{
+	display:block;
+	color:#fff;
+	text-align:center;
+}
+
+/*透明度层*/
+.wantgoBox ul li .mark{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	position:absolute;
+	left:0;
+	top:0;
+	border-radius:10px;
+	z-index:1;
+    opacity:0;
+    transition:all ease-in-out 0.5s;
+    -ms-transition:all ease-in-out 0.5s;
+}
+
+.wantgoBox ul li:hover .mark{
+	opacity:1;
+}
+
+/*保障*/
+.ensureBox{
+	width:1400px;
+	height:200px;
+	margin:40px auto;
+}
+
+.ensureList dl{
+     float:left;
+     width:450px;
+     margin:20px 25px 0 0;
+}
+
+.ensureList dl:last-child{
+	margin-right:0;
+}
+
+.ensureList dl dt,.ensureList dl dd{
+	float:left;
+}
+
+.ensureList dl dt{
+	margin-right:15px;
+}
+
+.ensureList dt img{
+	animation:bounce 0.75s infinite alternate;
+}
+
+.ensureList dl dd{
+	font-size:18px;
+	line-height:1.6;
+	width:300px;
+}
+
+/*友情链接*/
+.listlinkBox{
+	width:1400px;
+	height:280px;
+	margin:30px auto 50px auto;
+}
+
+.listlinkBox dl{
+	float:left;
+	width:350px;
+	line-height:1.6;
+}
+
+.listlinkBox dl dt{
+	margin:0 0 20px 0;
+	color:#00848A;
+}
+
+.copyBox{
+	text-align:center;
+}
